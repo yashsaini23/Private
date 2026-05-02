@@ -1,6 +1,6 @@
 
 function showMessage() {
-    alert("I'm sorry for my behaviour");
+    alert("I'm sorry for my actions");
 }
 document.addEventListener("DOMContentLoaded", function () {
     const greetingCard = document.querySelector(".greeting-card");
