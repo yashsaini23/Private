@@ -13,14 +13,27 @@ function handleYes() {
 }
 
 function moveButton(button) {
-    // Move button randomly
-    const x = Math.random() * 200 - 100;
-    const y = Math.random() * 200 - 100;
-    button.style.transform = `translate(${x}px, ${y}px)`;
+    const container = document.querySelector(".greeting-card");
 
-    // Show looping "please" messages
+    // Get boundaries
+    const maxX = container.offsetWidth - button.offsetWidth - 20;
+    const maxY = container.offsetHeight - button.offsetHeight - 20;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    button.style.position = "absolute";
+    button.style.left = x + "px";
+    button.style.top = y + "px";
+
+    // Update message with fade effect
     const text = document.getElementById("pleaseText");
-    text.innerText = messages[index];
+    text.style.opacity = 0;
+
+    setTimeout(() => {
+        text.innerText = messages[index];
+        text.style.opacity = 1;
+    }, 200);
 
     index = (index + 1) % messages.length;
 }
