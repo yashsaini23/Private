@@ -1,6 +1,11 @@
+function handleYes() {
+    alert("Thank you 🥹❤️");
+}
 
-function showMessage() {
-    alert("I'm sorry for my actions");
+function moveButton(button) {
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 200 - 100;
+    button.style.transform = `translate(${x}px, ${y}px)`;
 }
 document.addEventListener("DOMContentLoaded", function () {
     const greetingCard = document.querySelector(".greeting-card");
